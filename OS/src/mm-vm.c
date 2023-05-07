@@ -149,7 +149,6 @@ int __free(struct pcb_t *caller, int vmaid, int rgid)
 int pgalloc(struct pcb_t *proc, uint32_t size, uint32_t reg_index)
 {
   int addr;
-
   /* By default using vmaid = 0 */
   return __alloc(proc, 0, reg_index, size, &addr);
 }

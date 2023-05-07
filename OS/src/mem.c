@@ -256,7 +256,10 @@ static int translate(
  addr_t alloc_mem(uint32_t size, struct pcb_t * proc) {
 	pthread_mutex_lock(&mem_lock);
 	addr_t ret_mem = 0;
-	
+	pgalloc (proc, size, &ret_mem);
+
+
+
 	pthread_mutex_unlock(&mem_lock);
 	return ret_mem;
 }
